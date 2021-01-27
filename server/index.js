@@ -14,10 +14,11 @@ app.use(bodyParser.urlencoded({
   extended: false,
 }));
 app.use('/products/:id', express.static(`${__dirname}/../client/dist`));
+app.use('/bundle', express.static(`${__dirname}/../client/dist/bundle.js`));
 
-app.get('/', (req, res) => {
-  res.redirect('/products/1');
-});
+// app.get('/api', (req, res) => {
+//   res.redirect('/api/products/1');
+// });
 
 const port = 3001;
 
